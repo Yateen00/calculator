@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+#calculator {
+  width: 300px; /* Adjust this width if necessary */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px; /* This padding affects the inside content, aligning it */
+}
+#display {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* To keep the text aligned to the right */
+  width: calc(100% - 20px); /* Adjust width to account for padding */
+  height: 50px; /* Adjust height as needed */
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 24px; /* Adjust font size as needed */
+  overflow: hidden;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+button.operation {
+  background-color: #fdd835;
+}
+
+button.clear {
+  background-color: #ef5350;
+  color: white;
+}
+button.empty {
+  grid-column: span 2;
+}
+
+button:hover {
+  background-color: #ddd;
+}
