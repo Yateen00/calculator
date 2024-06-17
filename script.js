@@ -29,14 +29,12 @@ function addDecimal() {
     display.textContent === ""
   )
     display.textContent += "0.";
-  else if ((!isNaN(+arr.at(-1)) && Boolean(arr.at(-2))) || arr.at(-1) == "")
+  else if ((!isNaN(+arr.at(-1)) && arr.at(-2) == undefined) || arr.at(-1) == "")
     return;
   else display.textContent += decimal;
 }
 //learn boolean, nan, number or not etc. and waht stuff returns
-//1, 1.1, 1+1.1, 1+1
-//["1", "1.1", "1+1", "1+1.1"].map((a)=>a.split("."))
-//"11.2.2".split(".")
+//["1", "1.1", "1+1", "1+1.1","1.","1+1."].map((a)=>[a.split(".").at(-2),a.split(".").at(-1)])
 function addOperation(operation) {
   if (display.textContent === "");
   else if (display.textContent === "" && operation === "-")
@@ -82,9 +80,7 @@ function calculate() {
   let result = operationArray.at(0);
   display.textContent = result.toString();
 }
-//to do: what happens to decimal. and -30+8 case, make it 0-30
-//!nan(+)= checks if it is a number
-//0.55+2
+
 function parseArr(acc, curr, index) {
   let previous = acc.at(-1);
   let previousI = acc.length - 1;
